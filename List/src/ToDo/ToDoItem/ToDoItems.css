@@ -7,3 +7,15 @@ li {
  border-radius: 4px;
  margin-bottom: .5rem;   
 }
+
+input {
+    margin-right: 1rem;
+}
+
+.rm {
+    background: red;
+    border-radius: 50%;
+    color: #fff;
+    border: none;
+}
+

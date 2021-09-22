@@ -1,16 +1,25 @@
 import React from "react";
-import './ToDoItems.css'
+import "./ToDoItems.css";
 import PropTypes from "prop-types";
 
-function ToDoItem({ todo, index }) {
+function ToDoItem({ todo, index, onChange }) {
+  const classes = [];
+
+  if (todo.completed) {
+    classes.push("done");
+  }
+
   return (
     <li>
-      <span>
-        <input type="checkbox" />
+      <span className={classes.join(" ")}>
+        <input type="checkbox" 
+        checked={todo.completed} 
+        onChange={() => onChange(todo.id)} />
         <strong>{index + 1}</strong>
+        &nbsp;
         {todo.title}
       </span>
-        <button>&times;</button>
+      <button className="rm">&times;</button>
     </li>
   );
 }
@@ -18,6 +27,7 @@ function ToDoItem({ todo, index }) {
 ToDoItem.propTypes = {
   todo: PropTypes.object.isRequired,
   index: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default ToDoItem;
