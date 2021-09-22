@@ -1,11 +1,13 @@
 import React from 'react';
+import ToDoItem from './ToDoItem/ToDoItem';
 import './ToDoList.css';
 
-function ToDoList() {
+function ToDoList(props) {
   return (
     <ul>
-      <li>1</li>
-      <li>2</li>
+        {props.todos.map((todo, index) => {
+            return <ToDoItem todo={todo} key={todo.id} index={index} />
+        })}
     </ul>
   );
 }
