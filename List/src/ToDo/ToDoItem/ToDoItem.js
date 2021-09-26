@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Context from "../../context";
-import "./ToDoItems.css";
+import "./ToDoItem.css";
 import PropTypes from "prop-types";
 
 function ToDoItem({ todo, index, onChange }) {

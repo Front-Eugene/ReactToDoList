@@ -3,6 +3,7 @@ import ToDoList from "./ToDo/ToDoList";
 import Context from "./context";
 // import AddToDo from "./ToDo/AddToDo/AddToDo";
 import Loader from './Loader/Loader';
+import Modal from "./Modal/Modal";
 
 const AddToDo = React.lazy(() => import('./ToDo/AddToDo/AddToDo'))
 
@@ -60,6 +61,7 @@ function App() {
         ) : (
           loading ? null : <p>Nothing!</p>
         )}
+        <Modal />
       </div>
     </Context.Provider>
   );
